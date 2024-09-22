@@ -1,0 +1,4 @@
+﻿<linker>
+    <assembly fullname="InvalidProgram-net9" preserve="all">
+    </assembly>
+</linker>
