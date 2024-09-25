@@ -8,29 +8,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DefineConstants>TRIMMING</DefineConstants>
-    <CreatePackage>false</CreatePackage>
-    <MtouchLink>SdkOnly</MtouchLink>
-    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
-    <PublishTrimmed>true</PublishTrimmed>
-    <TrimMode>partial</TrimMode>
-    <TrimmerSingleWarn>false</TrimmerSingleWarn>
-    <EnableCodeSigning>true</EnableCodeSigning>
-    <MtouchInterpreter>-all</MtouchInterpreter>
-    <MtouchUseLlvm>false</MtouchUseLlvm>
-    <MtouchExtraArgs>--marshal-objectivec-exceptions:disable</MtouchExtraArgs>
+    <PublishTrimmed>true</PublishTrimmed> <!-- remove this and crash does not reproduce -->
   </PropertyGroup>
-
-  <PropertyGroup Condition="true">
-    <PublishTrimmed>true</PublishTrimmed>
-    <TrimMode>full</TrimMode>
-    <MtouchLink>full</MtouchLink>
-    <JsonSerializerIsReflectionEnabledByDefault>true</JsonSerializerIsReflectionEnabledByDefault>
-  </PropertyGroup>
-
-  <ItemGroup Condition="true">
-    <TrimmerRootDescriptor Include="trim.xml" />
-  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="DryIoc" Version="5.4.0" />
